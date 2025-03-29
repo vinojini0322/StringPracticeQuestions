@@ -121,4 +121,20 @@ public class Main {
         }
         return Arrays.toString(arr);
     }
+
+    //    Leetcode 151
+    private static String reverseWordsInSentence(String s) {
+        String[] words = s.split("\\s+");
+        int start = 0;
+        int end = words.length - 1;
+        StringBuilder arr = new StringBuilder();
+        while (start < end) {
+            arr.append(words[end]).append(" ");
+
+            end--;
+        }
+
+        return arr.toString().trim();
+    }
+
 }
