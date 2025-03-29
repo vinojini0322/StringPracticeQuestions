@@ -65,5 +65,12 @@ public class Main {
         }
         return reversed.toString().trim();
     }
-
+// Leetcode 334
+    private static char[] reverseString(char[] s){
+        StringBuilder reversed = new StringBuilder();
+        for (int i = 0; i < s.length/2; i++) {
+            reversed.append(s[s.length - 1 - i]);
+        }
+        return reversed.toString().toCharArray();
+    }
 }
