@@ -41,4 +41,16 @@ public class Main {
         return truncated.toString();
     }
 
+//    Leetcode 2000
+    private static String reversePrefix(String word, char ch){
+        int index = word.indexOf(ch);
+        StringBuilder reversed = new StringBuilder();
+        for (int i = index; i >= 0; i--) {
+            reversed.append(word.charAt(i));
+        }
+        String a = word.substring(index + 1);
+        reversed.append(a);
+        return reversed.toString();
+    }
+
 }
