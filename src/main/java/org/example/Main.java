@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
     }
@@ -65,12 +67,35 @@ public class Main {
         }
         return reversed.toString().trim();
     }
-// Leetcode 334
-    private static char[] reverseString(char[] s){
+
+    // Leetcode 334
+    private static char[] reverseString(char[] s) {
         StringBuilder reversed = new StringBuilder();
-        for (int i = 0; i < s.length/2; i++) {
+        for (int i = 0; i < s.length / 2; i++) {
             reversed.append(s[s.length - 1 - i]);
         }
         return reversed.toString().toCharArray();
+    }
+
+    //    Leetcode 917
+    private static String reverseOnlyLetters(String s) {
+        int start = 0;
+        int end = s.length() - 1;
+        char[] arr = s.toCharArray();
+
+        while (start <= end) {
+            if (Character.isLetter(s.charAt(start)) && Character.isLetter(s.charAt(end))) {
+                char temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            } else if (!Character.isLetter(s.charAt(start))) {
+                start++;
+            } else {
+                end--;
+            }
+        }
+        return String.valueOf(arr);
     }
 }
