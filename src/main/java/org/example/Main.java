@@ -98,4 +98,27 @@ public class Main {
         }
         return String.valueOf(arr);
     }
+
+    //    Leetcode 345
+    private static String reverseVowels(String s) {
+        String vowels = "aeiouAEIOU";
+        int start = 0;
+        int end = s.length();
+        char[] arr = s.toCharArray();
+        while (start < end) {
+
+            if (vowels.contains(String.valueOf(arr[start])) && vowels.contains(String.valueOf(arr[end]))) {
+                char temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            } else if (vowels.contains(String.valueOf(arr[start]))) {
+                end--;
+            } else {
+                start++;
+            }
+        }
+        return Arrays.toString(arr);
+    }
 }
