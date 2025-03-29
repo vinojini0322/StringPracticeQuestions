@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Arrays;
 
-public class Main {
+public class StringPractice {
     public static void main(String[] args) {
     }
 
