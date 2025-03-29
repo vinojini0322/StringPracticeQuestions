@@ -34,15 +34,14 @@ public class Main {
     private static String truncateSentence(String s, int k) {
         String[] words = s.split(" ");
         StringBuilder truncated = new StringBuilder();
-        for (int i = 0; i < k-1; i++) {
+        for (int i = 0; i <= k - 1; i++) {
             truncated.append(words[i]).append(" ");
         }
-        truncated.append(words[k-1]);
-        return truncated.toString();
+        return truncated.toString().trim();
     }
 
-//    Leetcode 2000
-    private static String reversePrefix(String word, char ch){
+    //    Leetcode 2000
+    private static String reversePrefix(String word, char ch) {
         int index = word.indexOf(ch);
         StringBuilder reversed = new StringBuilder();
         for (int i = index; i >= 0; i--) {
@@ -51,6 +50,20 @@ public class Main {
         String a = word.substring(index + 1);
         reversed.append(a);
         return reversed.toString();
+    }
+
+    //    Leetcode 557
+    private static String reverseWords(String s) {
+        String[] words = s.split(" ");
+        StringBuilder reversed = new StringBuilder();
+        for (String word : words) {
+            StringBuilder reversedWord = new StringBuilder();
+            for (int i = 0; i < word.length(); i++) {
+                reversedWord.append(word.charAt(word.length() - 1 - i));
+            }
+            reversed.append(reversedWord).append(" ");
+        }
+        return reversed.toString().trim();
     }
 
 }
